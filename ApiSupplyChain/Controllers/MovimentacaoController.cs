@@ -53,7 +53,7 @@ namespace ApiSupplyChain.Controllers
 
             var response = from movimentacao in movimentacoes
                            join estoque in _context.Estoque on movimentacao.Produto.Id equals estoque.ProdutoId
-                           orderby movimentacao.Produto.Register_Number descending
+                           orderby movimentacao.DataEvento descending
                            select new
                            {
                                Id = movimentacao.Id,
